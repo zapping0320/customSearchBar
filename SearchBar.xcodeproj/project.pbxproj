@@ -12,6 +12,8 @@
 		0B19F70B22CEA668001059DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B19F70922CEA668001059DD /* Main.storyboard */; };
 		0B19F70D22CEA66C001059DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B19F70C22CEA66C001059DD /* Assets.xcassets */; };
 		0B19F71022CEA66C001059DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B19F70E22CEA66C001059DD /* LaunchScreen.storyboard */; };
+		0B19F71922CEAE36001059DD /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B19F71722CEAE36001059DD /* WordCell.swift */; };
+		0B19F71A22CEAE36001059DD /* WordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B19F71822CEAE36001059DD /* WordCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		0B19F70C22CEA66C001059DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B19F70F22CEA66C001059DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B19F71122CEA66C001059DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B19F71722CEAE36001059DD /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		0B19F71822CEAE36001059DD /* WordCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				0B19F70522CEA668001059DD /* AppDelegate.swift */,
 				0B19F70722CEA668001059DD /* ViewController.swift */,
+				0B19F71722CEAE36001059DD /* WordCell.swift */,
+				0B19F71822CEAE36001059DD /* WordCell.xib */,
 				0B19F70922CEA668001059DD /* Main.storyboard */,
 				0B19F70C22CEA66C001059DD /* Assets.xcassets */,
 				0B19F70E22CEA66C001059DD /* LaunchScreen.storyboard */,
@@ -123,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B19F71022CEA66C001059DD /* LaunchScreen.storyboard in Resources */,
+				0B19F71A22CEAE36001059DD /* WordCell.xib in Resources */,
 				0B19F70D22CEA66C001059DD /* Assets.xcassets in Resources */,
 				0B19F70B22CEA668001059DD /* Main.storyboard in Resources */,
 			);
@@ -135,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B19F71922CEAE36001059DD /* WordCell.swift in Sources */,
 				0B19F70822CEA668001059DD /* ViewController.swift in Sources */,
 				0B19F70622CEA668001059DD /* AppDelegate.swift in Sources */,
 			);
