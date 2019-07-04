@@ -33,7 +33,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="wordLabel" destination="hp3-Jq-9Ml" id="l8T-eT-gSJ"/>
+                <outlet property="wordLabel" destination="KUx-AW-FBZ" id="549-gK-E2z"/>
             </connections>
         </tableViewCell>
     </objects>

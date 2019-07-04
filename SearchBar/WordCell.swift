@@ -10,7 +10,7 @@ import UIKit
 
 class WordCell: UITableViewCell {
 
-    @IBOutlet weak var wordLabel: NSLayoutConstraint!
+    @IBOutlet weak var wordLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
