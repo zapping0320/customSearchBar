@@ -22,11 +22,14 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let searchVC = UISearchController(searchResultsController: nil)
+        let searchC = UISearchController(searchResultsController: nil)
+        searchC.searchResultsUpdater = self
         
-        self.navigationItem.searchController = searchVC
+        self.navigationItem.searchController = searchC
         
         self.navigationItem.hidesSearchBarWhenScrolling = false
+        
+        searchTableView.register(UINib(nibName: "WordCell", bundle: nil), forCellReuseIdentifier: "wordCell")
         
     }
 
@@ -34,6 +37,10 @@ class ViewController: UIViewController{
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch isFiltered {
         case true:
@@ -44,11 +51,33 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if isFiltered {
-            return filteredWordListCell
-        }else {
-            return workListCell
+       let cell = searchTableView.dequeueReusableCell(withIdentifier: "wordCell") as! WordCell
+        
+        switch isFiltered {
+        case true:
+            cell.wordLabel.text = self.filterWordList[indexPath.row]
+        case false:
+           cell.wordLabel.text = self.wordList[indexPath.row]
         }
         
+        return cell
+        
+    }
+}
+
+extension ViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let hasText = searchController.searchBar.text {
+            if hasText.isEmpty {
+                self.isFiltered = false
+            }else {
+                self.isFiltered = true
+//                self.filterWordList = self.wordList.filter({ (element) -> Bool in
+//                    return element.contains(hasText)
+//                })
+                self.filterWordList = self.wordList.filter({ $0.contains(hasText) })
+            }
+            self.searchTableView.reloadData()
+        }
     }
 }
